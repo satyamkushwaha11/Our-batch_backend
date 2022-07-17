@@ -4,9 +4,6 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
 
-                                                    
-
-
 // for login API
 
 const login = async (req, res) => {
@@ -67,6 +64,9 @@ const signup = async (req, res) => {
     console.log(req.body);
     const schema = Joi.object({
         // name: Joi.string().trim().required().min(3),
+        firstName:Joi.string().allow(null,""),
+        lastName:Joi.string().allow(null,""),
+        phone:Joi.number().allow(null,""),
         email: Joi.string().email().required().trim(),
         password: Joi.string().required().trim().min(6).max(16),
         role: Joi.string().valid('ADMIN', 'USER').default('USER')

@@ -2,6 +2,14 @@ const { model, Schema } = require("mongoose");
 
 const userSchema = new Schema(
   {
+    firstName: {
+      type: String,
+      required: false,
+    },
+    lastName: {
+      type: String,
+      required: false,
+    },
     userName: {
       type: String,
       required: false,
@@ -9,14 +17,19 @@ const userSchema = new Schema(
     role: {
       type: String,
       default: "USER",
+      enum:["USER","ADMIN",'DEVELOPER']
+    },
+    phone: {
+      type: String,
+      required: false,
     },
     email: {
       type: String,
-      required: false,
+      required: true,
     },
     password: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   { timestamps: true }
