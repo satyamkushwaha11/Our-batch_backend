@@ -10,6 +10,10 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
+    userID: {
+      type: String,
+      required: false,
+    },
     userName: {
       type: String,
       required: false,
@@ -18,6 +22,11 @@ const userSchema = new Schema(
       type: String,
       default: "USER",
       enum:["USER","ADMIN",'DEVELOPER']
+    },
+    userStatus: {
+      type: String,
+      default: "ACTIVE",
+      enum:["ACTIVE","INACTIVE",'DEACTIVE','SUSPENDED','DELETED']
     },
     phone: {
       type: String,
