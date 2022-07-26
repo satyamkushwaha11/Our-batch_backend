@@ -1,4 +1,5 @@
 const { model, Schema } = require("mongoose");
+const mongoose =require("mongoose");
 
 const userSchema = new Schema(
   {
@@ -11,7 +12,8 @@ const userSchema = new Schema(
       required: false,
     },
     userID: {
-      type: String,
+      type:String ,
+      default:mongoose.Types.ObjectId(),
       required: false,
     },
     userName: {
@@ -41,7 +43,8 @@ const userSchema = new Schema(
       required: true,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
+  { _id : false }
 );
 
 module.exports=model('Users',userSchema)
