@@ -29,7 +29,7 @@ const login = async (req, res) => {
         if (user) {
             const matchingPassword = await bcrypt.compare(password, user.password) //MATCHING THE PASSWORD
             if (matchingPassword) {
-                const token = jwt.sign({ user }, process.env.SECRETE_KEY)       // CREATING JWT TOKEN
+                const token = jwt.sign({ user }, process.env.SECRETE_KEY||"$SECRECT_KEY#")       // CREATING JWT TOKEN
                 return res.status(200).json({
                     massage:'login successfully',
                     ...user["_doc"],
@@ -110,9 +110,9 @@ const signup = async (req, res) => {
                 ...payload,
                 password: hashPassword
             })
-            console.log(createUser,process.env.SECRETE_KEY,'ooooooooooooo');
+            console.log(createUser,process.env.SECRETE_KEY || "$SECRECT_KEY#",'ooooooooooooo');
             // CREATING JWT TOKEN
-            const token = jwt.sign({ user: createUser }, process.env.SECRETE_KEY)
+            const token = jwt.sign({ user: createUser }, process.env.SECRETE_KEY||"$SECRECT_KEY#")
 
             return res.status(200).json({
                 massage: ' Your account has been created ',
