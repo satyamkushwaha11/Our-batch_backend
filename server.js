@@ -12,7 +12,7 @@ const connect = require("./connection/db");
 connect(); // function call to connect with database
 
 app.use("/", authRoutes);
-app.use("/", (req,res)=>res.send({
+app.get("/", (req,res)=>res.send({
   msg:'asdfas'
 }));
 
