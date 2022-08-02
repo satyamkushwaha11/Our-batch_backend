@@ -12,7 +12,9 @@ const connect = require("./connection/db");
 connect(); // function call to connect with database
 
 app.use("/", authRoutes);
-// app.use("/", websiteRoutes);
+app.get("/", (req,res)=>res.send({
+  msg:'asdfas'
+}));
 
 const PORT = process.env.PORT || 7001;
 app.listen(PORT, () => {
