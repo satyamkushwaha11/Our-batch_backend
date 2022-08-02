@@ -4,7 +4,7 @@ const auth =require('./auth')
 const user=require('./users.routes')
 
 
-router.use("/auth",auth)
+router.use("/",auth)
 router.use('/user',user)
 
 
