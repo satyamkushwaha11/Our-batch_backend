@@ -14,6 +14,7 @@ connect(); // function call to connect with database
 app.use("/", authRoutes);
 
 
+
 const PORT = process.env.PORT || 7001;
 app.listen(PORT, () => {
   console.log(`Your app is running at Port ${PORT}`);
