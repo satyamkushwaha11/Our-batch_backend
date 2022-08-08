@@ -12,6 +12,9 @@ const connect = require("./connection/db");
 connect(); // function call to connect with database
 
 app.use("/", authRoutes);
+app.get('/',(req,res)=>{
+  res.send("Hello World!");
+});
 
 
 
