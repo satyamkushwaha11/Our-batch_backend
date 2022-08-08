@@ -18,7 +18,7 @@ app.get('/',(req,res)=>{
 
 
 
-const PORT = process.env.PORT || 7001;
-app.listen(PORT, () => {
-  console.log(`Your app is running at Port ${PORT}`);
+const port = process.env.PORT || 7001;
+app.listen(port, () => {
+  console.log(`Your app is running at Port ${port}`);
 });
