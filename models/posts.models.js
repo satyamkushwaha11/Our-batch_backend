@@ -7,9 +7,17 @@ const postSchema = new Schema({
   files:{
     type:Array
   },
+  description: {
+    type: String,
+  },
+  tags: {
+    type:Array
+  },
   mentions:{
     type:Array
   },
+
+
 
 });
 
