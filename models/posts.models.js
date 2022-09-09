@@ -4,21 +4,18 @@ const postSchema = new Schema({
   title: {
     type: String,
   },
-  files:{
-    type:Array
+  files: {
+    type: Array,
   },
   description: {
     type: String,
   },
   tags: {
-    type:Array
+    type: Array,
   },
-  mentions:{
-    type:Array
+  mentions: {
+    type: Array,
   },
-
-
-
 });
 
 module.export = model("Posts", postSchema);
